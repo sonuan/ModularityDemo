@@ -20,8 +20,9 @@ allprojects {
         jcenter()
         mavenCentral()
         //指定绝对路径
-        maven { url project.mavenLocalCenter}
-//        maven {url "https://github.com/sonuan/TestMaven/raw/master"}
+        //maven { url project.mavenLocalCenter}
+        //git远端
+        maven {url "https://github.com/sonuan/ModularityDemo/raw/master/maven"}
 
     }
 }

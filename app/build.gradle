@@ -25,10 +25,10 @@ dependencies {
     // 然而还有另外一种方式，在功能已稳定或发包后，可以把除了正在开发模块外的其他各个功能模块打包成.aar，
     // 再放到主App的libs里面依赖，这样既可以减少编译时间，又可以更专注某个模块功能开发
     if (!project.isSingleModuleDebug) {
-//        compile('com.wusongyuan:lib-live:1.0'){
-//            exclude module:'lib-base'
-//        }
-        compile project(':live')    // compile(name: 'library_live', ext: 'aar')
+        compile('com.wusongyuan:lib-live:1.1'){
+            exclude module:'lib-base'
+        }
+//        compile project(':live')    // compile(name: 'library_live', ext: 'aar')
         compile project(':forum')   // compile(name: 'library_forum', ext: 'aar')
         compile project(':mall')    // compile(name: 'library_mall', ext: 'aar')
         compile project(':mine')    // compile(name: 'library_mine', ext: 'aar')
