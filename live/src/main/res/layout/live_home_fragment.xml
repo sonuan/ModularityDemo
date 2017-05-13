@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="10dp"
+              tools:context="com.wusongyuan.live.fragment.LiveHomeFragment"
+    >
+
+    <TextView
+        android:id="@+id/live_home_info_tv"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        />
+
+    <Button
+        android:id="@+id/live_home_login_interface_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="登录(interface)"
+        android:textSize="14sp"
+        />
+
+    <Button
+        android:id="@+id/live_home_login_filter_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="登录(隐式启动)"
+        android:textSize="14sp"
+        />
+
+    <Button
+        android:id="@+id/live_home_login_class_name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="登录（类名）"
+        android:textSize="14sp"
+        />
+
+    <Button
+        android:id="@+id/live_home_login_scheme_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="登录（Scheme跳转）"
+        android:textSize="14sp"
+        />
+
+    <Button
+        android:id="@+id/live_home_logout_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="退出登录"
+        android:textSize="14sp"
+        />
+
+</LinearLayout>

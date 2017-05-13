@@ -1,0 +1,59 @@
+// 当独立开发时，该功能Module为application，就可以独立运行
+// 因此设置一个开关，用于切换是否独立开发
+if (project.isSingleModuleDebug) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.1"
+        // 只有独立开发时，才需要一个applicationId
+        // 不能与其他模块重复
+        if (project.isSingleModuleDebug) {
+            applicationId "com.wusongyuan.live.debug"
+        }
+
+        // 资源命名必须加上这个前缀，否则会提示错误
+        resourcePrefix "live_"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            if (!project.isSingleModuleDebug) {
+                java.srcDir 'src/main/java/'
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                res.srcDirs = ['src/main/res']
+                java {
+                    // 排除src/debug下的所有java文件
+                    exclude 'src/debug/**'
+                }
+            } else {
+                java.srcDir 'src/debug/java/'
+                manifest.srcFile 'src/debug/AndroidManifest.xml'
+                res.srcDirs = ['src/debug/res', 'src/main/res']
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':lib-base')
+}
+
+apply from: 'maven-release-aar.gradle'
+

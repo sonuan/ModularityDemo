@@ -1,0 +1,1 @@
+include ':app', ':live', ':mall', ':forum', ':mine', ':lib-base', ':router'

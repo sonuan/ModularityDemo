@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.wusongyuan.modularity"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // 非独立模块开发时，各功能模块Module为library，主App需要添加各功能模块的依赖
+    // 然而还有另外一种方式，在功能已稳定或发包后，可以把除了正在开发模块外的其他各个功能模块打包成.aar，
+    // 再放到主App的libs里面依赖，这样既可以减少编译时间，又可以更专注某个模块功能开发
+    if (!project.isSingleModuleDebug) {
+//        compile('com.wusongyuan:lib-live:1.0'){
+//            exclude module:'lib-base'
+//        }
+        compile project(':live')    // compile(name: 'library_live', ext: 'aar')
+        compile project(':forum')   // compile(name: 'library_forum', ext: 'aar')
+        compile project(':mall')    // compile(name: 'library_mall', ext: 'aar')
+        compile project(':mine')    // compile(name: 'library_mine', ext: 'aar')
+    } else {
+        compile project(':lib-base')
+    }
+}
