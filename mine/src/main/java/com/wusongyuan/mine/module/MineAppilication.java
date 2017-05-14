@@ -6,7 +6,6 @@ import android.util.Log;
 import com.wusongyuan.base.constans.AccountUtil;
 import com.wusongyuan.base.module.IApplication;
 import com.wusongyuan.base.utils.BasePreferencesUtil;
-import com.wusongyuan.mine.BuildConfig;
 
 /**
  * @author wusongyuan
@@ -21,7 +20,7 @@ public class MineAppilication implements IApplication {
     @Override
     public void initApplication(Application application) {
         Log.i(TAG, "initApplication: ");
-        BasePreferencesUtil.init(BuildConfig.isSingleModuleDebug);
+        BasePreferencesUtil.init(com.wusongyuan.base.BuildConfig.isSingleModuleDebug);
         AccountUtil.init();
     }
 }

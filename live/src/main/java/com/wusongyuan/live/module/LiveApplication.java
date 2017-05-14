@@ -1,11 +1,10 @@
-package com.wusongyuan.live.debug;
+package com.wusongyuan.live.module;
 
 import android.app.Application;
 
 import com.wusongyuan.base.constans.AccountUtil;
 import com.wusongyuan.base.module.IApplication;
 import com.wusongyuan.base.utils.BasePreferencesUtil;
-import com.wusongyuan.live.BuildConfig;
 
 /**
  * @author wusongyuan
@@ -16,7 +15,7 @@ import com.wusongyuan.live.BuildConfig;
 public class LiveApplication implements IApplication {
     @Override
     public void initApplication(Application application) {
-        BasePreferencesUtil.init(BuildConfig.isSingleModuleDebug);
+        BasePreferencesUtil.init(com.wusongyuan.base.BuildConfig.isSingleModuleDebug);
         AccountUtil.init();
     }
 }

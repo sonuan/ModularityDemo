@@ -18,6 +18,9 @@ android {
         }
         // 资源命名必须加上这个前缀，否则会提示错误
         resourcePrefix "forum_"
+        manifestPlaceholders = [
+                SHARED_USER_ID : "$project.SHARED_USER_ID"
+        ]
     }
     buildTypes {
         release {

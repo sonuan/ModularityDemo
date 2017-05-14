@@ -51,6 +51,7 @@ public class BasePreferencesUtil {
 
     private static int getDefaultSharedPreferencesMode() {
         return isSingleModuleDebug ? Context.MODE_MULTI_PROCESS | Context.MODE_WORLD_READABLE : Context.MODE_PRIVATE;
+        //return Context.MODE_PRIVATE;
     }
 
 

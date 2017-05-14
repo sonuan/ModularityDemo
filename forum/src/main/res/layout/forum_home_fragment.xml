@@ -1,15 +1,67 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+              android:orientation="vertical"
              tools:context="com.wusongyuan.forum.fragment.ForumHomeFragment"
     >
-    <ImageView
-        android:id="@+id/forum_home_iv"
+
+    <TextView
+        android:id="@+id/forum_home_info_tv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
+        android:layout_height="80dp"
+        android:gravity="center"
+        />
+
+    <Button
+        android:id="@+id/forum_home_data_sp_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="SharePreference"
+        android:textSize="14sp"
+        />
+
+    <Button
+        android:id="@+id/forum_home_data_uid_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="sharedUserId"
+        android:textSize="14sp"
+        />
+
+    <Button
+        android:id="@+id/forum_home_data_cp_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="ContentProvider"
+        android:textSize="14sp"
+        />
+
+    <Button
+        android:id="@+id/forum_home_data_aidl_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="AIDL"
+        android:textSize="14sp"
+        />
+
+    <Button
+        android:id="@+id/forum_home_data_clean_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="退出登录"
+        android:textSize="14sp"
         />
 
 
-</FrameLayout>
+</LinearLayout>

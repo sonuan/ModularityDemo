@@ -1,15 +1,15 @@
-package com.wusongyuan.live.module;
+package com.wusongyuan.forum.module;
 
 import com.wusongyuan.base.module.IApplication;
 import com.wusongyuan.base.module.Module;
 
 /**
  * @author wusongyuan
- * @date 2017.05.14
+ * @date 2017.05.15
  * @desc
  */
 
-public class LiveModule extends Module {
+public class ForumModule extends Module {
     @Override
     public Object getUiInterface() {
         return null;
@@ -22,6 +22,6 @@ public class LiveModule extends Module {
 
     @Override
     public IApplication getApplication() {
-        return new LiveApplication();
+        return new ForumApplication();
     }
 }

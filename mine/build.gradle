@@ -17,18 +17,15 @@ android {
             applicationId "com.wusongyuan.mine.debug"
         }
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [
+                SHARED_USER_ID : "$project.SHARED_USER_ID"
+        ]
 
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField('boolean', 'isSingleModuleDebug', "$project.isSingleModuleDebug")
-        }
-        debug {
-            buildConfigField('boolean', 'isSingleModuleDebug', "$project.isSingleModuleDebug")
-
         }
     }
 
