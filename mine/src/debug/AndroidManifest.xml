@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name="com.wusongyuan.mine.MineApplication"
+        android:name="com.wusongyuan.mine.debug.MineApp"
         android:theme="@style/AppTheme">
         <activity android:name="com.wusongyuan.mine.debug.MineMainActivity">
             <intent-filter>

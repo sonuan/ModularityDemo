@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name="com.wusongyuan.base.app.BaseApp"
+        android:name=".debug.LiveApp"
         android:theme="@style/AppTheme">
         <activity android:name="com.wusongyuan.live.debug.LiveMainActivity">
             <intent-filter>

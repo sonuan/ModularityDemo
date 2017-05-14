@@ -12,9 +12,11 @@ import com.wusongyuan.base.module.ModuleManager;
 
 public class BaseApp extends MultiDexApplication {
 
+    public static BaseApp INSTANCE;
     @Override
     public void onCreate() {
         super.onCreate();
+        INSTANCE = this;
         ModuleManager.loadApplication(this);
     }
 }

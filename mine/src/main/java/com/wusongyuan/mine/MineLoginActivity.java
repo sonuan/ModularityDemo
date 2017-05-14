@@ -43,9 +43,9 @@ public class MineLoginActivity extends AppCompatActivity implements View.OnClick
                 Toast.makeText(this, "密码不能为空", Toast.LENGTH_SHORT).show();
                 return;
             }
-            AccountUtil.setLogined(true);
             AccountUtil.setUsername(username);
             AccountUtil.setPassword(password);
+            AccountUtil.login();
             finish();
         }
 

@@ -1,5 +1,9 @@
 package com.wusongyuan.base.constans;
 
+import android.util.Log;
+
+import com.wusongyuan.base.utils.BasePreferencesUtil;
+
 /**
  * @author wusongyuan
  * @date 2017.04.26
@@ -7,6 +11,8 @@ package com.wusongyuan.base.constans;
  */
 
 public class AccountUtil {
+
+    private static final String TAG = "AccountUtil";
 
     private static boolean isLogined = false;
     private static String username = "";
@@ -16,8 +22,21 @@ public class AccountUtil {
         return isLogined;
     }
 
-    public static void setLogined(boolean isLogined) {
-        AccountUtil.isLogined = isLogined;
+    public static void init() {
+        if (BasePreferencesUtil.isLogined()) {
+            isLogined = true;
+            username = BasePreferencesUtil.getMineLoginUserName();
+            password = BasePreferencesUtil.getMineLoginPassword();
+        } else {
+            isLogined = false;
+        }
+        Log.i(TAG, "init: username:" + username + " password:" + password);
+    }
+
+    public static void login() {
+        AccountUtil.isLogined = true;
+        BasePreferencesUtil.setLogined(isLogined);
+        BasePreferencesUtil.setMineLogin(username, password);
     }
 
     public static String getUsername() {
@@ -39,6 +58,6 @@ public class AccountUtil {
     public static void logout() {
         setPassword(null);
         setUsername(null);
-        setLogined(false);
+        AccountUtil.isLogined = false;
     }
 }

@@ -1,8 +1,8 @@
-package com.wusongyuan.mine;
+package com.wusongyuan.mine.debug;
 
 import com.wusongyuan.base.app.BaseApp;
-import com.wusongyuan.base.module.mine.MineProxy;
 import com.wusongyuan.base.module.ModuleManager;
+import com.wusongyuan.base.module.mine.MineProxy;
 import com.wusongyuan.mine.module.MineModule;
 
 /**
@@ -11,7 +11,7 @@ import com.wusongyuan.mine.module.MineModule;
  * @desc
  */
 
-public class MineApplication extends BaseApp {
+public class MineApp extends BaseApp {
 
     @Override
     public void onCreate() {

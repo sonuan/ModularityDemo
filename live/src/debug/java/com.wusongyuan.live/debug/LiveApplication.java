@@ -1,26 +1,21 @@
-package com.wusongyuan.mine.module;
+package com.wusongyuan.live.debug;
 
 import android.app.Application;
-import android.util.Log;
 
 import com.wusongyuan.base.constans.AccountUtil;
 import com.wusongyuan.base.module.IApplication;
 import com.wusongyuan.base.utils.BasePreferencesUtil;
-import com.wusongyuan.mine.BuildConfig;
+import com.wusongyuan.live.BuildConfig;
 
 /**
  * @author wusongyuan
- * @date 2017.05.03
+ * @date 2017.05.14
  * @desc
  */
 
-public class MineAppilication implements IApplication {
-    private static final String TAG = "MineAppilication";
-
-
+public class LiveApplication implements IApplication {
     @Override
     public void initApplication(Application application) {
-        Log.i(TAG, "initApplication: ");
         BasePreferencesUtil.init(BuildConfig.isSingleModuleDebug);
         AccountUtil.init();
     }

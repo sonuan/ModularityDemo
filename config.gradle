@@ -1,4 +1,4 @@
 ext {
-    isSingleModuleDebug = false;
+    isSingleModuleDebug = true;
     mavenLocalCenter = "file:///${rootDir.getPath()}/maven"
 }

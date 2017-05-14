@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.wusongyuan.base.app.BaseFragment;
 import com.wusongyuan.base.constans.AccountUtil;
-import com.wusongyuan.base.module.mine.MineProxy;
 import com.wusongyuan.live.R;
 
 import java.util.List;
@@ -68,11 +67,13 @@ public class LiveHomeFragment extends BaseFragment implements View.OnClickListen
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.live_home_login_interface_tv) {
-            if (!AccountUtil.isLogined()) {
-                mLoginType = i;
-                MineProxy.g.getUiInterface().toMineLoginActivity(getActivity());
-                return;
-            }
+            //if (!AccountUtil.isLogined()) {
+            //    mLoginType = i;
+            //    MineProxy.g.getUiInterface().toMineLoginActivity(getActivity());
+            //    return;
+            //}
+            AccountUtil.init();
+            updateLoginInfo();
             Toast.makeText(getContext(), "user:" + AccountUtil.getUsername() + " password:" + AccountUtil.getPassword(),
                     Toast.LENGTH_SHORT).show();
         } else if (i == R.id.live_home_login_filter_tv) {
