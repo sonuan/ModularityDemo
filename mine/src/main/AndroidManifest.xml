@@ -17,7 +17,7 @@
             </intent-filter>
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <action android:name="com.mine.login"/>
+                <action android:name="com.wusongyuan.mine.login"/>
             </intent-filter>
         </activity>
     </application>

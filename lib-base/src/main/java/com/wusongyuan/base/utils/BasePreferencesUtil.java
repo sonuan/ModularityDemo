@@ -14,6 +14,7 @@ import com.wusongyuan.base.app.BaseApp;
  */
 
 public class BasePreferencesUtil {
+    private static final String TAG = "BasePreferencesUtil";
 
     private static boolean isSingleModuleDebug = false;
 
@@ -56,19 +57,19 @@ public class BasePreferencesUtil {
 
 
     public static SharedPreferences getMineSharedPreferences(){
-        Context comtext;
+        Context context;
         if (isSingleModuleDebug) {
             try {
-                comtext = BaseApp.INSTANCE.createPackageContext(MINE_PACKAGE_NAME, Context.CONTEXT_IGNORE_SECURITY);
+                context = BaseApp.INSTANCE.createPackageContext(MINE_PACKAGE_NAME, Context.CONTEXT_IGNORE_SECURITY);
             } catch (PackageManager.NameNotFoundException e) {
                 e.printStackTrace();
-                comtext = BaseApp.INSTANCE;
+                context = BaseApp.INSTANCE;
             }
         } else {
-            comtext = BaseApp.INSTANCE;
+            context = BaseApp.INSTANCE;
         }
-        return comtext.getSharedPreferences(getDefaultSharedPreferencesName(MINE_PACKAGE_NAME),
-                getDefaultSharedPreferencesMode());
+        return context.getSharedPreferences(
+                getDefaultSharedPreferencesName(MINE_PACKAGE_NAME), getDefaultSharedPreferencesMode());
     }
 
     ///////////////////////////////////////////////

@@ -79,10 +79,12 @@ public class LiveHomeFragment extends BaseFragment implements View.OnClickListen
         } else if (i == R.id.live_home_login_filter_tv) {
             if (!AccountUtil.isLogined()) {
                 mLoginType = i;
-                Intent intent = new Intent("com.mine.login");
+                Intent intent = new Intent("com.wusongyuan.mine.login");
                 startActivity(intent);
                 return;
             }
+            Toast.makeText(getContext(), "已登录",
+                    Toast.LENGTH_SHORT).show();
             // to do something
         } else if (i == R.id.live_home_login_class_name_tv) {
             if (!AccountUtil.isLogined()) {
@@ -97,6 +99,8 @@ public class LiveHomeFragment extends BaseFragment implements View.OnClickListen
                 //startActivity(intent2);
                 return;
             }
+            Toast.makeText(getContext(), "已登录",
+                    Toast.LENGTH_SHORT).show();
             // to do something
         } else if (i == R.id.live_home_login_scheme_tv) {
             if (!AccountUtil.isLogined()) {
@@ -112,9 +116,13 @@ public class LiveHomeFragment extends BaseFragment implements View.OnClickListen
                 }
                 return;
             }
+            Toast.makeText(getContext(), "已登录",
+                    Toast.LENGTH_SHORT).show();
             // to do something
         } else if (i == R.id.live_home_logout_tv) {
             mLoginType = 0;
+            Toast.makeText(getContext(), "退出登录",
+                    Toast.LENGTH_SHORT).show();
             AccountUtil.logout();
             updateLoginInfo();
         }
