@@ -1,5 +1,5 @@
 ext {
-    isSingleModuleDebug = true;
+    isSingleModuleDebug = false;
     mavenLocalCenter = "file:///${rootDir.getPath()}/maven"
     SHARED_USER_ID = "com.wusongyuan"
 }
