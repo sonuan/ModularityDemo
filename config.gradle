@@ -2,4 +2,16 @@ ext {
     isSingleModuleDebug = false;
     mavenLocalCenter = "file:///${rootDir.getPath()}/maven"
     SHARED_USER_ID = "com.wusongyuan"
+
+
+    //签名
+    signingConfigs = {
+        dobugs {
+            //设置release的签名信息
+            storeFile file("${rootDir.getPath()}/sign-keystore")      //签名文件
+            storePassword '1q2w3e4r'
+            keyAlias 'dobugs.com'
+            keyPassword '1q2w3e4r'  //签名密码
+        }
+    }
 }

@@ -1,0 +1,20 @@
+密钥库类型: JKS
+密钥库提供方: SUN
+
+您的密钥库包含 1 个条目
+
+别名: dobugs.com
+创建日期: Apr 12, 2018
+条目类型: PrivateKeyEntry
+证书链长度: 1
+证书[1]:
+所有者: CN=dobugs.keystore, OU=dobugs.com, O=dobugs.com, L=厦门, ST=福建, C=86
+发布者: CN=dobugs.keystore, OU=dobugs.com, O=dobugs.com, L=厦门, ST=福建, C=86
+序列号: 2326352d
+有效期开始日期: Thu Apr 12 00:21:19 CST 2018, 截止日期: Fri Apr 21 18:05:53 CST 1978
+证书指纹:
+	 MD5: AC:71:22:2F:4B:94:AC:CF:5F:8B:4C:6B:54:A1:29:C5
+	 SHA1: 7C:17:10:42:F4:81:E3:F5:55:C8:7E:32:95:32:E3:F1:12:15:17:26
+	 SHA256: E9:DF:D0:F2:AD:01:E4:46:1B:EA:3A:25:37:77:54:5D:C8:CC:F6:C6:18:2D:78:86:19:94:80:29:49:0D:FB:AA
+	 签名算法名称: SHA256withRSA
+	 版本: 3
